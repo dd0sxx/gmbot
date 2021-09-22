@@ -1,0 +1,31 @@
+{
+  "name": "GM Discord Bot",
+  "description": "A TS script to send 'gm' messages to Discord",
+  "keywords": [
+    "gm",
+    "discord"
+  ],
+  "repository": "https://github.com/dd0sxx/gmbot",
+  "env": {
+    "DISCORD_BOT_TOKEN": {
+      "description": "The auth token for a Discord bot",
+      "required": true
+    },
+    "DISCORD_CHANNEL_ID": {
+      "description": "Your Discord channel ID (snowflake), i.e. 694927656805859499, where your Bot has access and will post",
+      "required": false
+    },
+    "SECONDS": {
+      "description": "How many seconds should we look back for sales on OpenSea. i.e. 3600 for one hour. Running more frequently may get you banned from the OpenSea API",
+      "required": false
+    }
+  },
+  "image": "heroku/nodejs",
+  "addons": ["scheduler"],
+  "formation": [],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
